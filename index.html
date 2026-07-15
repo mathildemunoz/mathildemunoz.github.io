@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathilde Muñoz</title>
+<meta name="description" content="Mathilde Muñoz — Assistant Professor of Economics, UC Berkeley. Research on taxation, migration, trade and labor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --muted:#5c5c5c;
+    --faint:#8a8a8a;
+    --line:#e7e4de;
+    --bg:#fbfaf7;
+    --accent:#7a2e2e;      /* muted oxblood red */
+    --accent-soft:#f3ece9;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:24px;padding-right:24px}
+
+  /* ---- top nav ---- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(251,250,247,.85);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  nav .name{font-family:"Inter",system-ui,sans-serif;font-weight:600;font-size:19px;letter-spacing:.2px}
+  nav .links{display:flex;gap:26px}
+  nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+  nav a:hover{color:var(--accent)}
+
+  /* ---- hero ---- */
+  header.hero{padding:64px 0 40px}
+  .hero-grid{display:grid;grid-template-columns:1fr 180px;gap:40px;align-items:start}
+  h1{font-family:"Inter",system-ui,sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-.022em;margin:0 0 6px}
+  .role{color:var(--muted);font-size:18px;margin:0 0 18px}
+  .role strong{color:var(--ink);font-weight:600}
+  .affil{color:var(--faint);font-size:15px;margin:0 0 22px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:9px 16px;border-radius:8px;font-size:15px;font-weight:500;
+    text-decoration:none;border:1px solid var(--line);color:var(--ink);background:#fff;
+    transition:all .15s ease;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .btn.primary:hover{background:#611f1f;color:#fff}
+  .photo{
+    width:180px;height:230px;border-radius:12px;
+    object-fit:cover;object-position:50% 28%;display:block;
+    background:var(--accent-soft);border:1px solid var(--line);
+  }
+
+  /* ---- sections ---- */
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  h2{font-family:"Inter",system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;
+     text-transform:uppercase;color:var(--accent);margin:0 0 22px}
+  p.lede{font-size:17px;color:var(--muted);margin:0 0 16px}
+  p.lede:last-child{margin-bottom:0}
+
+  /* ---- papers (compact) ---- */
+  .cat{font-family:"Inter";font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+       color:var(--faint);margin:26px 0 12px}
+  .cat:first-of-type{margin-top:0}
+  .paper{margin:0 0 13px;padding:0}
+  .paper .ptitle{font-family:"Inter",system-ui,sans-serif;font-size:17px;font-weight:600;line-height:1.3;margin:0 0 2px;letter-spacing:-.005em}
+  .paper .ptitle a{color:var(--ink);text-decoration:none}
+  .paper .ptitle a:hover{color:var(--accent)}
+  .paper .pline{font-size:14.5px;color:var(--muted);line-height:1.4;margin:0}
+  .paper .pline .jrnl{color:var(--accent);font-weight:600;font-size:16.5px}
+  .paper .pline .auth{color:var(--faint)}
+  .paper .pline a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .paper .pline a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .paper .pline .sep{color:var(--line);margin:0 7px}
+  .paper .pmedia{font-size:12.5px;color:var(--faint);font-style:italic;margin:1px 0 0;line-height:1.4}
+  .paper .pmedia b{font-style:normal;font-weight:600;color:var(--faint)}
+  .paper .abs{font-size:14px;color:var(--muted);margin:4px 0 0;line-height:1.5}
+
+  /* ---- contact ---- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;font-size:16px}
+  .contact-grid a{color:var(--accent);text-decoration:none}
+  .contact-grid a:hover{text-decoration:underline}
+  .contact-grid .lbl{color:var(--faint);font-size:13px;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:2px}
+
+  footer{padding:34px 0 60px;color:var(--faint);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+
+  @media(max-width:640px){
+    .hero-grid{grid-template-columns:1fr}
+    .photo{width:150px;height:184px;order:-1}
+    h1{font-size:32px}
+    .contact-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="name">Mathilde Muñoz</span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+      <a href="https://drive.google.com/file/d/1oCKP2axWRkYkqBgUPdJwZUqOVezUe6WN/view" target="_blank" rel="noopener">CV</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Mathilde Muñoz</h1>
+      <p class="role"><strong>Assistant Professor</strong>, Department of Economics<br>University of California, Berkeley</p>
+      <p class="affil">Faculty Research Fellow, NBER (Public Economics · ITI) &nbsp;·&nbsp; Research Fellow, IZA &nbsp;·&nbsp; PhD, Paris School of Economics (2022)</p>
+      <div class="cta">
+        <a class="btn primary" href="https://drive.google.com/file/d/1oCKP2axWRkYkqBgUPdJwZUqOVezUe6WN/view" target="_blank" rel="noopener">Curriculum Vitae</a>
+        <a class="btn" href="#research">Research</a>
+        <a class="btn" href="mailto:mathildemunoz@berkeley.edu">Email</a>
+      </div>
+    </div>
+    <img class="photo" src="photo.jpg" alt="Mathilde Muñoz">
+
+  </div>
+</header>
+
+<main>
+
+<section id="about" class="wrap">
+  <h2>About</h2>
+  <p class="lede">I am an Assistant Professor of Economics at UC Berkeley, working at the intersection of public economics, international trade, and economic geography. My research studies how economic integration and the rising mobility of people, firms, and capital across borders and regions reshape local economies and national policies, and whether governments can still tax, redistribute, and develop lagging regions when their tax and regulatory bases are mobile.</p>
+</section>
+
+<section id="research" class="wrap">
+
+  <div class="cat">Publications &amp; Forthcoming</div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/1PYxccIQWppeXV2fFlxDhFmncdqJLRgAy/view" target="_blank" rel="noopener">International Trade Responses to Labor Market Regulations</a></p>
+    <p class="pline"><span class="jrnl">American Economic Review</span>, 2025 (Lead Article)</p>
+    <p class="pmedia"><b>Media:</b> Trade Talks podcast (ep. 197)</p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/1rLT475YkvowPIjO9PtctKHUo3kkRcvPg/view" target="_blank" rel="noopener">Taxing Top Wealth: Migration Responses and their Aggregate Economic Implications</a></p>
+    <p class="pline"><span class="jrnl">American Economic Review</span>, forthcoming <span class="auth">· with Jakobsen, Kleven, Kolsrud &amp; Landais</span></p>
+    <p class="pmedia"><b>Media:</b> The Wall Street Journal</p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/1E5Da-Ze_nirRQ1D0NOXKfUuAYYdoTpiq/view" target="_blank" rel="noopener">Trading Non-Tradables: The Implications of Europe's Job Posting Policy</a></p>
+    <p class="pline"><span class="jrnl">Quarterly Journal of Economics</span>, 2024 <span class="sep">·</span> <a href="https://drive.google.com/file/d/1wvAd5TvEixOxLbsMYLQ__rYo979tc8uN/view" target="_blank" rel="noopener">Appendix</a></p>
+    <p class="pmedia"><b>Awards:</b> OECD Future of Work Fellowship (2020) · WTO Young Economist Award (2022)</p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/18lKOK_U4pkOS6rXopXy-DTlEslu49Z_o/view" target="_blank" rel="noopener">Taxation and Migration: Evidence and Policy Implications</a></p>
+    <p class="pline"><span class="jrnl">Journal of Economic Perspectives</span>, 2020 <span class="auth">· with Kleven, Landais &amp; Stantcheva</span></p>
+  </div>
+
+  <div class="cat">Working Papers</div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/15kABDwDiW1pW-M0oGNsdcawtFiHGWgXT/view" target="_blank" rel="noopener">Pensioners Without Borders</a></p>
+    <p class="pline"><span class="jrnl">R&amp;R, American Economic Review</span> <span class="auth">· with Kalin &amp; Levy</span></p>
+    <p class="pmedia"><b>Media:</b> NBER Digest · Le Figaro</p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/1mpkBksXbjI5u1EIG8xow9b3FiFc3k2Ev/view" target="_blank" rel="noopener">Tax Design, Information, and Elasticities: Evidence From the French Wealth Tax</a></p>
+    <p class="pline"><span class="jrnl">R&amp;R, Review of Economic Studies</span> <span class="auth">· with Garbinti, Goupille-Lebret, Stantcheva &amp; Zucman</span> <span class="sep">·</span> <a href="https://gabriel-zucman.eu/files/GGMSZ2023Appendix.pdf" target="_blank" rel="noopener">Appendix</a></p>
+    <p class="pmedia"><b>Media:</b> VoxEU column</p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://www.dropbox.com/scl/fi/7nf05gw9m4rs95rxxfar8/Mobile_Seniors.pdf?rlkey=xmfkxoh8rknh6yrc6jvawjglz&dl=0" target="_blank" rel="noopener">Senior Migration, Local Economic Development and Spatial Concentration</a></p>
+    <p class="pline">2026 <span class="auth">· with Badilla-Maroto, Faber &amp; Levy</span></p>
+    <p class="pmedia"><b>Media:</b> Le Grand Continent · Le Monde · Les Échos</p>
+  </div>
+
+  <div class="cat">Work in Progress</div>
+
+  <div class="paper">
+    <p class="ptitle">Foreign Opportunity and Local Revival: Evidence from the French Rust Belt</p>
+    <p class="pline"><span class="auth">with Levy</span></p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle">Tax Discrimination: Competition in the Market for Firms</p>
+    <p class="pline"><span class="auth">with Slattery</span></p>
+  </div>
+
+  <div class="cat">Earlier Working Papers</div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/1-Vqnh0iO3MbQVddw7tNj-ouoa7Bp1ChJ/view" target="_blank" rel="noopener">How Much Are the Poor Losing from Tax Competition?</a></p>
+    <p class="pline">2023 <span class="sep">·</span> <a href="https://drive.google.com/file/d/1m9c8yD6cTMn5IIv9XZfoktKwLm6wpT/view" target="_blank" rel="noopener">Appendix</a></p>
+  </div>
+
+  <div class="paper">
+    <p class="ptitle"><a href="https://drive.google.com/file/d/1RtRhjMv8K4-2VJOcAi3DvaLqr0187x2Q/view" target="_blank" rel="noopener">Do European Top Earners React to Labor Taxation Through Migration?</a></p>
+    <p class="pline">WIL Working Paper, 2023</p>
+    <p class="pmedia"><b>Awards:</b> IIPF Young Economist Award (2019)</p>
+  </div>
+
+</section>
+
+<section id="contact" class="wrap">
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <div><span class="lbl">Email</span><a href="mailto:mathildemunoz@berkeley.edu">mathildemunoz@berkeley.edu</a></div>
+    <div><span class="lbl">Office</span>Department of Economics, UC Berkeley</div>
+    <div><span class="lbl">CV</span><a href="https://drive.google.com/file/d/1oCKP2axWRkYkqBgUPdJwZUqOVezUe6WN/view" target="_blank" rel="noopener">Download (PDF)</a></div>
+    <div><span class="lbl">For students</span>Graduate students: email to arrange office hours</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="yr">2026</span> Mathilde Muñoz · Built as a static site
+</footer>
+
+</body>
+</html>
